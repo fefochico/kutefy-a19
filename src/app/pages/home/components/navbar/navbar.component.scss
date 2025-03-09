@@ -1,0 +1,41 @@
+nav{
+    position: fixed !important;
+    width: 100% !important;
+    z-index: 3;
+}
+
+.bg-green{
+    background-color: #00BCD4;
+}
+.navbar-brand{
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.5em;
+    margin-left: 25px;
+}
+
+
+#navbarNavBigScreen{
+    width: 100% !important;
+    display: inline !important;
+}
+
+.navbar-toggler{
+    margin-right: 5px;
+}
+
+.darkBackground{
+    background-color: #343a40;
+    color: white
+}
+
+
+@media (max-width: 768px) {
+    #navbarNavBigScreen {
+        display: none !important;
+    }
+}
+@media (min-width: 768px) {
+    #navbarNavSmallScreen{
+        display: none !important;
+    }
+}

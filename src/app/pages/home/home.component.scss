@@ -1,0 +1,11 @@
+#content-by-section{
+    padding-top: 75px;
+    padding-left: 100px;
+    padding-right: 15px;
+}
+
+@media (max-width: 768px) {
+    #content-by-section {
+        padding-left: 15px;
+    }
+}

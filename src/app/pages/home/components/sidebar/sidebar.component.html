@@ -1,0 +1,39 @@
+<nav id="sidebar">
+    <ul class="list-unstyled components">
+        <li [class.active]="selectedIndex === 1" 
+        (click)="setIndex(1)">
+            <a [routerLink]="['/home/info']" >
+               <ng-content select="[shopIcon]"/>
+                Tienda
+            </a>
+        </li>
+        <li [class.active]="selectedIndex === 2" 
+        (click)="setIndex(2)">
+            <a [routerLink]="['/home/activity']">
+                <ng-content select="[activityIcon]"/>
+                Actividad
+            </a>
+        </li>
+        <li [class.active]="selectedIndex === 3" 
+        (click)="setIndex(3)">
+            <a [routerLink]="['/home/shift']">
+                <ng-content select="[shiftIcon]"/>
+                Turnos
+            </a>
+        </li>        
+        <li [class.active]="selectedIndex === 4" 
+        (click)="setIndex(4)">
+            <a [routerLink]="['/home/staff']">
+                <ng-content select="[staffIcon]"/>
+                Personal
+            </a>
+        </li>
+        <li [class.active]="selectedIndex === 5" 
+        (click)="setIndex(5)">
+            <a [routerLink]="['/home/booking']">
+                <ng-content select="[bookingsIcon]"/>
+                Reservas
+            </a>
+        </li>
+    </ul>
+</nav>
