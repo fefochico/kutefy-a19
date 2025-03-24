@@ -28,3 +28,7 @@
     padding-right: 6px;
     font-weight: bold;
 }
+
+::ng-deep .navbar-toggler {
+    border: 0;
+} 

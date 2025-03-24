@@ -1,9 +1,71 @@
-<p>info works!</p>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+  <div class="row">
+    <div class="col-md-4 offset-md-4 col-sm-12 col-xs-12">
+        <div class="card bg-dark text-light border-light">
+            <div class="card-header">
+                <h4 class="card-title">Datos de la empresa</h4>
+            </div>
+            <div class="card-body">
+                    <form [formGroup]="infoForm" class="form">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="name" class="col-form-label-sm">Nombre</label>
+                          <input type="text" class="form-control form-control-sm" id="name" name="name" formControlName="name">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="description" class="col-form-label-sm">Descripción</label>
+                          <textarea class="form-control form-control-sm" id="description" rows="3" name="description" formControlName="description"></textarea>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="phone" class="col-form-label-sm">Teléfono 1</label>
+                            <input type="text" class="form-control form-control-sm" id="phone1" name="phone1" formControlName="phone1">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="phone2" class="col-form-label-sm">Teléfono 2</label>
+                          <input type="text" class="form-control form-control-sm" id="phone2" name="phone2" formControlName="phone2">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="type" class="col-form-label-sm">País</label>
+                        <select class="form-control form-control-sm" id="type" id="idcountry" name="idcountry" formControlName="idcountry">
+                          <option>Seleccione un país</option>
+                          @for(c of country; track c.id){
+                            <option value="{{c.id}}">{{c.name_es}}</option>
+                          }
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="address" class="col-form-label-sm">Ciudad</label>
+                            <input type="text" class="form-control form-control-sm" id="city" name="city" formControlName="city">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="address" class="col-form-label-sm">Dirección</label>
+                            <input type="text" class="form-control form-control-sm" id="address" name="address" formControlName="address">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <label for="email" class="col-form-label-sm">Email</label>
+                        <input type="text" class="form-control form-control-sm" id="email" name="email" formControlName="email">
+                      </div>
+                      <div class="col-md-12">
+                        <div class="text-right">
+                            <button type="button" class="btn btn-primary btn-sm green-btn" (click)="saveInfoShop()" [disabled]="saving">Guardar</button>
+                        </div>
+                      </div>
+                      <span class="error">{{error}}</span>
+                    </div>
+                  </form>
+            </div>
+        </div>
+    </div>
 
-    Why do we use it?
-    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-    
-    
-    Where does it come from?
-    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+</div>

@@ -1,0 +1,23 @@
+.father {
+    margin-left: 85px;
+    padding-top: 75px;
+    background: #1E1E1E;
+}
+
+.card{
+    margin-bottom: 25px;
+    .form-control{
+        background-color: rgba(0,0,0,0.5);
+        color: white;
+        border-color: rgba(255,255,255,0.3);
+        border-radius: 0;
+    }
+}
+
+.border-light{
+    border-color: rgba(255,255,255,0.3) !important;
+}
+
+.card-header{
+    border-bottom: 0px;
+}

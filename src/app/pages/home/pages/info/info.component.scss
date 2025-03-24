@@ -1,0 +1,41 @@
+.card{
+    margin-bottom: 25px;
+    .form-control{
+        background-color: rgba(0,0,0,0.5);
+        color: white;
+        border-color: rgba(255,255,255,0.3);
+        border-radius: 0;
+    }
+}
+
+.border-light{
+    border-color: rgba(255,255,255,0.3) !important;
+}
+
+.card-header{
+    border-bottom: 0px;
+}
+
+textarea {
+    resize: none;
+}
+
+.text-right{
+    padding-top: 15px;
+    text-align: right;
+}
+
+.green-btn{
+    background: #00BCD4;
+    color:black;
+}
+
+@media (max-width: 768px) {
+    .parent {
+        padding-top: 75px;
+        padding-left: 15px;
+    }
+    .column1 {
+        width:100%;
+    }
+}
