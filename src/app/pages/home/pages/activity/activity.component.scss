@@ -1,15 +1,19 @@
 .father {
     margin-left: 85px;
-    padding-top: 75px;
-    background: #1E1E1E;
+}
+
+.bg-dark-custom{
+    background: #282b34;
+    border-color: #383b43 !important;
+    color: white
 }
 
 .card{
     margin-bottom: 25px;
     .form-control{
-        background-color: rgba(0,0,0,0.5);
+        background-color: #33363e;
         color: white;
-        border-color: rgba(255,255,255,0.3);
+        border-color: rgba(255,255,255,0.3) !important;
         border-radius: 0;
     }
 }

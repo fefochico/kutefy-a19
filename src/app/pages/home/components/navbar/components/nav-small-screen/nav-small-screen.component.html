@@ -1,15 +1,15 @@
     <div class="navbar-nav">
-        <a class="nav-item nav-link" [routerLink]="['/home/info']" (click)="closeCollapseNavbar()">Tienda</a>
-        <a class="nav-item nav-link" [routerLink]="['/home/activity']" (click)="closeCollapseNavbar()">Actividad</a>
-        <a class="nav-item nav-link" [routerLink]="['/home/shift']" (click)="closeCollapseNavbar()">Turnos</a>
-        <a class="nav-item nav-link" [routerLink]="['/home/staff']" (click)="closeCollapseNavbar()">Personal</a>
-        <a class="nav-item nav-link" [routerLink]="['/home/booking']" href="#" (click)="closeCollapseNavbar()">Reservas</a>
+        <a class="nav-item nav-link" [routerLink]="['/home/info']" (click)="closeCollapseNavbar(1)">Tienda</a>
+        <a class="nav-item nav-link" [routerLink]="['/home/activity']" (click)="closeCollapseNavbar(2)">Actividad</a>
+        <a class="nav-item nav-link" [routerLink]="['/home/shift']" (click)="closeCollapseNavbar(3)">Turnos</a>
+        <a class="nav-item nav-link" [routerLink]="['/home/staff']" (click)="closeCollapseNavbar(4)">Personal</a>
+        <a class="nav-item nav-link" [routerLink]="['/home/booking']" href="#" (click)="closeCollapseNavbar(5)">Reservas</a>
         <div id="line"></div>
-        <a class="nav-item nav-link" [routerLink]="['/home/notifications']" href="#" (click)="closeCollapseNavbar()">Notificaciones
+        <a class="nav-item nav-link" [routerLink]="['/home/notifications']" href="#" (click)="closeCollapseNavbar(null)">Notificaciones
             <span style="position: relative;"><div class="number-notifications notificationsInSmallScreen">10</div>
             </span>
         </a>
         <div id="line"></div>
-        <a class="nav-item nav-link" [routerLink]="['/home/setting']" href="#" (click)="closeCollapseNavbar()">Ajustes</a>
-        <a class="nav-item nav-link" [routerLink]="['/home/booking']" href="#" (click)="closeCollapseNavbar()">Cerrar sesión</a>
+        <a class="nav-item nav-link" [routerLink]="['/home/setting']" href="#" (click)="closeCollapseNavbar(null)">Ajustes</a>
+        <a class="nav-item nav-link" [routerLink]="['/home/booking']" href="#" (click)="closeCollapseNavbar(null)">Cerrar sesión</a>
     </div>
