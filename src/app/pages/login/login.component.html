@@ -17,8 +17,8 @@
                                   </svg>
                                 </span>
                               </div>
-                              <input type="text" class="form-control" name="username" id="username" formControlName="username" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-                            </div>
+                              <input type="text" class="form-control" name="username" id="username" formControlName="username" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"
+                              [ngClass]="{'is-invalid': userForm.get('username')?.invalid && (userForm.get('username')?.touched || userForm.get('username')?.dirty)}">                            </div>
                         </div>
                       </div>
                       <div class="col-md-12">
@@ -44,7 +44,8 @@
                                 </svg>
                               </span>
                             </div>
-                            <input type="password" class="form-control" placeholder="Password" name="password" id="password" formControlName="password" aria-label="Username" aria-describedby="basic-addon1">
+                            <input type="password" class="form-control" placeholder="Password" name="password" id="password" formControlName="password" aria-label="Username" aria-describedby="basic-addon1"
+                            [ngClass]="{'is-invalid': userForm.get('password')?.invalid && (userForm.get('password')?.touched || userForm.get('password')?.dirty)}">
                           </div>
                         </div>
                       </div>
