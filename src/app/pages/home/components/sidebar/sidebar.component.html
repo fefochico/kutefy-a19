@@ -1,38 +1,33 @@
-<nav id="sidebar">
-    <ul class="list-unstyled components">
-        <li [class.active]="selectedIndex === 1" 
-        (click)="setIndex(1)">
-            <a [routerLink]="['/home/info']" >
+<nav id="sidebar" class="d-flex flex-column bg-dark text-secondary pt-4 vh-100 position-fixed top-0 start-0 z-2">
+    <ul class="list-unstyled components flex-grow-1 overflow-auto">
+        <li class="mb-2" [class.active]="selectedIndex === 1" (click)="setIndex(1)">
+            <a [routerLink]="['/home/info']" class="d-block p-2 rounded text-center text-decoration-none fw-bold text-secondary">
                <ng-content select="[shopIcon]"/>
-                Tienda
+                <small class="d-block">Tienda</small>
             </a>
         </li>
-        <li [class.active]="selectedIndex === 2" 
-        (click)="setIndex(2)">
-            <a [routerLink]="['/home/activity']">
+        <li class="mb-2" [class.active]="selectedIndex === 2" (click)="setIndex(2)">
+            <a [routerLink]="['/home/activity']" class="d-block p-2 rounded text-center text-decoration-none fw-bold text-secondary">
                 <ng-content select="[activityIcon]"/>
-                Actividad
+                <small class="d-block">Actividad</small>
             </a>
         </li>
-        <li [class.active]="selectedIndex === 3" 
-        (click)="setIndex(3)">
-            <a [routerLink]="['/home/shift']">
+        <li class="mb-2" [class.active]="selectedIndex === 3" (click)="setIndex(3)">
+            <a [routerLink]="['/home/shift']" class="d-block p-2 rounded text-center text-decoration-none fw-bold text-secondary">
                 <ng-content select="[shiftIcon]"/>
-                Turnos
+                <small class="d-block">Turnos</small>
             </a>
         </li>        
-        <li [class.active]="selectedIndex === 4" 
-        (click)="setIndex(4)">
-            <a [routerLink]="['/home/staff']">
+        <li class="mb-2" [class.active]="selectedIndex === 4" (click)="setIndex(4)">
+            <a [routerLink]="['/home/staff']" class="d-block p-2 rounded text-center text-decoration-none fw-bold text-secondary">
                 <ng-content select="[staffIcon]"/>
-                Personal
+                <small class="d-block">Personal</small>
             </a>
         </li>
-        <li [class.active]="selectedIndex === 5" 
-        (click)="setIndex(5)">
-            <a [routerLink]="['/home/booking']">
+        <li class="mb-2" [class.active]="selectedIndex === 5" (click)="setIndex(5)">
+            <a [routerLink]="['/home/booking']" class="d-block p-2 rounded text-center text-decoration-none fw-bold text-secondary">
                 <ng-content select="[bookingsIcon]"/>
-                Reservas
+                <small class="d-block">Reservas</small>
             </a>
         </li>
     </ul>

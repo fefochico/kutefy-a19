@@ -1,26 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, input, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { LocalStorageService } from '../../../../../../shared/services/local-storage.service';
-import { NavbarSignalService } from '../../../../services/navbar-signal.service';
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'nav-small-screen',
-  imports: [RouterModule],
+  imports: [RouterModule, NgbCollapseModule],
   templateUrl: './nav-small-screen.component.html',
   styleUrl: './nav-small-screen.component.scss'
 })
 export class NavSmallScreenComponent {
-  constructor(private navbarSignalService: NavbarSignalService, private localStorageService: LocalStorageService){}
-  
-  
-  public closeCollapseNavbar(index: number |  null){
-    if(index) {
-      this.navbarSignalService.selectMenuItem(index);
-      this.localStorageService.setItem('selectedMenuOption', index);
-    }
-  }
+  isNavbarCollapsed = input(true); 
 
   public logout(){
 
+  }
+
+  closeCollapseNavbar(itemIndex: number | null) {
   }
 }

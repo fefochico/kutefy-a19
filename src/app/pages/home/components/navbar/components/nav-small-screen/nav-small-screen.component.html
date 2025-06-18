@@ -1,15 +1,23 @@
-    <div class="navbar-nav">
-        <a class="nav-item nav-link" [routerLink]="['/home/info']" (click)="closeCollapseNavbar(1)">Tienda</a>
-        <a class="nav-item nav-link" [routerLink]="['/home/activity']" (click)="closeCollapseNavbar(2)">Actividad</a>
-        <a class="nav-item nav-link" [routerLink]="['/home/shift']" (click)="closeCollapseNavbar(3)">Turnos</a>
-        <a class="nav-item nav-link" [routerLink]="['/home/staff']" (click)="closeCollapseNavbar(4)">Personal</a>
-        <a class="nav-item nav-link" [routerLink]="['/home/booking']" href="#" (click)="closeCollapseNavbar(5)">Reservas</a>
-        <div id="line"></div>
-        <a class="nav-item nav-link" [routerLink]="['/home/notifications']" href="#" (click)="closeCollapseNavbar(null)">Notificaciones
-            <span style="position: relative;"><div class="number-notifications notificationsInSmallScreen">10</div>
-            </span>
-        </a>
-        <div id="line"></div>
-        <a class="nav-item nav-link" [routerLink]="['/home/setting']" href="#" (click)="closeCollapseNavbar(null)">Ajustes</a>
-        <a class="nav-item nav-link" [routerLink]="['/home/booking']" href="#" (click)="closeCollapseNavbar(null)">Cerrar sesión</a>
-    </div>
+            <div class="navbar-nav bg-dark">
+                <a class="nav-link" [routerLink]="['/home/info']" (click)="closeCollapseNavbar(1)">Tienda</a>
+                <a class="nav-link" [routerLink]="['/home/activity']" (click)="closeCollapseNavbar(2)">Actividad</a>
+                <a class="nav-link" [routerLink]="['/home/shift']" (click)="closeCollapseNavbar(3)">Turnos</a>
+                <a class="nav-link" [routerLink]="['/home/staff']" (click)="closeCollapseNavbar(4)">Personal</a>
+                <a class="nav-link" [routerLink]="['/home/booking']" href="#"
+                    (click)="closeCollapseNavbar(5)">Reservas</a>
+
+                <hr class="dropdown-divider my-2">
+
+                <a class="nav-link d-flex align-items-center" [routerLink]="['/home/notifications']" href="#"
+                    (click)="closeCollapseNavbar(null)">
+                    Notificaciones
+                    <span class="badge text-bg-danger rounded-pill ms-2">10</span>
+                </a>
+
+                <hr class="dropdown-divider my-2">
+
+                <a class="nav-link" [routerLink]="['/home/setting']" href="#"
+                    (click)="closeCollapseNavbar(null)">Ajustes</a>
+                <a class="nav-link" [routerLink]="['/home/booking']" href="#"
+                    (click)="closeCollapseNavbar(null)">Cerrar sesión</a>
+            </div>

@@ -1,44 +1,48 @@
-    <ul class="navbar-nav-custom navbar-nav flex-row ml-md-auto d-none d-md-flex">
-        <li class="nav-item dropdown" style="margin-right: 40px;">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+<ul class="navbar-nav flex-row ms-auto">
+    <li class="nav-item dropdown me-4" ngbDropdown>
+        <div class="pe-5">
+            <a class="nav-link dropdown-toggle text-white cursor-pointer" id="dropdownNotification" ngbDropdownToggle>
                 <ng-content select="[notificationIcon]"/>
-                <div class="number-notifications">10</div>
+                <span class="badge text-bg-danger rounded-pill position-absolute top-3 start-50 translate-middle">10</span>
             </a>
-            <ul class="dropdown-menu">
-              <li>
-                <div class="dropdown-item" style="display: flex; justify-content: left; align-items: center; color: green">
-                    <ng-content select="[newBook]"/>
-                    <a [routerLink]="['/home/notifications']" style="padding-left: 10px; text-decoration: none;">Nueva reserva <br>18/09/2024 9:30</a>
-                </div>
+            <div ngbDropdownMenu aria-labelledby="dropdownNotification" class="dropdown-menu-dark dropdown-menu-end">
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <div class="dropdown-item d-flex align-items-center text-success">
+                            <ng-content select="[newBook]"/>
+                            <a [routerLink]="['/home/notifications']" class="ms-2 text-decoration-none text-white">Nueva reserva <br>18/09/2024 9:30</a>
+                        </div>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <div class="dropdown-item d-flex align-items-center text-danger">
+                            <ng-content select="[removedBook]"/>
+                            <a [routerLink]="['/home/notifications']" class="ms-2 text-decoration-none text-white">Reserva cancelada <br>18/09/2024 9:30</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </li>
 
-              </li>
-              <li><hr class="dropdown-divider"></li>
-              <li>
-                <div class="dropdown-item" style="display: flex; justify-content: left; align-items: center; color: red">
-                    <ng-content select="[removedBook]"/>
-                    <a [routerLink]="['/home/notifications']" style="padding-left: 10px; text-decoration: none;">Reserva cancelada <br>18/09/2024 9:30</a>
-                </div>
-            </li>
-            </ul>
-        </li>
-        <li class="nav-item dropdown" style="margin-right: 25px;">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <ng-content select="[userIcon]"/>
-            </a>
-            <ul class="dropdown-menu" style="margin-left: -85px;">
-              <li>
-                <div class="dropdown-item">
+    <li class="nav-item dropdown me-3" ngbDropdown>
+        <a class="nav-link dropdown-toggle text-white cursor-pointer" id="dropdownUser" ngbDropdownToggle>
+            <ng-content select="[userIcon]"/>
+        </a>
+        <div ngbDropdownMenu aria-labelledby="dropdownUser" class="dropdown-menu-dark dropdown-menu-end">
+            <div>
+                <div class="dropdown-item d-flex align-items-center">
                     <ng-content select="[perfil]"/>
-                    <a [routerLink]="['/home/setting']">Ajustes</a>
+                    <a [routerLink]="['/home/setting']" class="ms-2 text-decoration-none text-white">Ajustes</a>
                 </div>
-            </li>
-              <li><hr class="dropdown-divider"></li>
-              <li>
-                <div class="dropdown-item">
+            </div>
+            <li><hr class="dropdown-divider"></li>
+            <div>
+                <div class="dropdown-item d-flex align-items-center">
                     <ng-content select="[lock]"/>
-                    <a  href="#">Cerrar sesión</a>
+                    <a href="#" class="ms-2 text-decoration-none text-white">Cerrar sesión</a>
                 </div>
-              </li>
-            </ul>
-        </li>
-    </ul>
+            </div>
+        </div>
+    </li>
+</ul>
