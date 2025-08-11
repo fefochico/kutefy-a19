@@ -10,14 +10,20 @@
                       <div class="col-md-12">
                         <div class="form-group">
                           <label for="name" class="col-form-label-sm">Nombre*:</label>
-                          <input type="text" class="form-control form-control-sm" id="name" name="name" formControlName="name" placement="bottom" ngbTooltip="Nombre es un campo obligatorio (min. 5 caracteres)" 
+                          <input type="text" class="form-control form-control-sm" id="name" name="name" 
+                          formControlName="name" 
+                          placement="bottom" 
+                          [ngbTooltip]="(infoForm.get('name')?.invalid&&infoForm.get('name')?.touched) ? 'Nombre es un campo obligatorio (min. 5 caracteres)' : null"
                           [ngClass]="{'is-invalid': infoForm.get('name')?.invalid && (infoForm.get('name')?.dirty || infoForm.get('name')?.touched)}">
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
                           <label for="description" class="col-form-label-sm">Descripción*:</label>
-                          <textarea class="form-control form-control-sm" id="description" rows="3" name="description" formControlName="description" placement="bottom" ngbTooltip="Descripción es un campo obligatorio (min. 10 caracteres)"
+                          <textarea class="form-control form-control-sm" id="description" rows="3" name="description" 
+                          formControlName="description" 
+                          placement="bottom" 
+                          [ngbTooltip]="(infoForm.get('description')?.invalid&&infoForm.get('description')?.touched) ? 'Descripción es un campo obligatorio (min. 10 caracteres)': null"
                           [ngClass]="{'is-invalid': infoForm.get('description')?.invalid && (infoForm.get('description')?.dirty || infoForm.get('description')?.touched)}">
                           ></textarea>
                         </div>
@@ -25,20 +31,32 @@
                       <div class="col-md-6">
                         <div class="form-group">
                             <label for="phone" class="col-form-label-sm">Teléfono 1*:</label>
-                            <input type="text" class="form-control form-control-sm" id="phone1" name="phone1" formControlName="phone1" placement="bottom" ngbTooltip="Teléfono es un campo obligatorio (9 dígitos)"
+                            <input type="text" class="form-control form-control-sm" id="phone1" name="phone1" 
+                            formControlName="phone1" 
+                            placement="bottom" 
+                            [ngbTooltip]="(infoForm.get('phone1')?.invalid&&infoForm.get('phone1')?.touched) ? 'Teléfono es un campo obligatorio (9 dígitos)': null"
                             [ngClass]="{'is-invalid': infoForm.get('phone1')?.invalid && (infoForm.get('phone1')?.dirty || infoForm.get('phone1')?.touched)}">
                           </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="phone2" class="col-form-label-sm">Teléfono 2</label>
-                          <input type="text" class="form-control form-control-sm" id="phone2" name="phone2" formControlName="phone2" placement="bottom" ngbTooltip="Segundo teléfono de la empresa"> 
+                          <input type="text" class="form-control form-control-sm" id="phone2" name="phone2" 
+                          formControlName="phone2" 
+                          placement="bottom" 
+                          [ngbTooltip]="(infoForm.get('phone2')?.invalid&&infoForm.get('phone2')?.touched) ? 'Segundo teléfono de la empresa (9 dígitos)': null"
+                          [ngClass]="{'is-invalid': infoForm.get('phone2')?.invalid && (infoForm.get('phone2')?.dirty || infoForm.get('phone2')?.touched)}"
+                          > 
                         </div>
                       </div>
                       <div class="col-md-6">
                         <label for="type" class="col-form-label-sm">País*:</label>
-                        <select class="form-control form-control-sm" id="type" id="idcountry" name="idcountry" formControlName="idcountry"  placement="bottom" ngbTooltip="País es un campo requerido"
-                          [ngClass]="{'is-invalid': infoForm.get('idcountry')?.invalid && (infoForm.get('idcountry')?.dirty || infoForm.get('idcountry')?.touched)}">
+                        <select class="form-control form-control-sm" id="type" id="idcountry" name="idcountry" 
+                        formControlName="idcountry"  
+                        placement="bottom" 
+                        [ngbTooltip]="(infoForm.get('idcountry')?.invalid&&infoForm.get('idcountry')?.touched) ? 'País es un campo requerido': null"
+                        [ngClass]="{'is-invalid': infoForm.get('idcountry')?.invalid && (infoForm.get('idcountry')?.dirty || infoForm.get('idcountry')?.touched)}"
+                        >
 
                           <option>Seleccione un país</option>
                           @for(c of country; track c.id){
@@ -49,28 +67,36 @@
                       <div class="col-md-6">
                         <div class="form-group">
                             <label for="address" class="col-form-label-sm">Ciudad*:</label>
-                            <input type="text" class="form-control form-control-sm" id="city" name="city" formControlName="city" placement="bottom" ngbTooltip="Ciudad es un campo requerido"
+                            <input type="text" class="form-control form-control-sm" id="city" name="city" 
+                            formControlName="city" 
+                            placement="bottom" 
+                            [ngbTooltip]="(infoForm.get('city')?.invalid&&infoForm.get('city')?.touched) ? 'Ciudad es un campo requerido': null"
                             [ngClass]="{'is-invalid': infoForm.get('city')?.invalid && (infoForm.get('city')?.dirty || infoForm.get('city')?.touched)}">
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
                             <label for="address" class="col-form-label-sm">Dirección*:</label>
-                            <input type="text" class="form-control form-control-sm" id="address" name="address" formControlName="address" placement="bottom" ngbTooltip="Dirección es un campo requerido(min. 5 caracteres)"
+                            <input type="text" class="form-control form-control-sm" id="address" name="address" 
+                            formControlName="address" 
+                            placement="bottom" 
+                            [ngbTooltip]="(infoForm.get('address')?.invalid&&infoForm.get('address')?.touched) ? 'Dirección es un campo requerido(min. 5 caracteres)': null"
                             [ngClass]="{'is-invalid': infoForm.get('address')?.invalid && (infoForm.get('address')?.dirty || infoForm.get('address')?.touched)}">
                         </div>
                       </div>
                       <div class="col-md-12">
                         <label for="email" class="col-form-label-sm">Email*:</label>
-                        <input type="text" class="form-control form-control-sm" id="email" name="email" formControlName="email" placement="bottom" ngbTooltip="Email es un campo requerido"
+                        <input type="text" class="form-control form-control-sm" id="email" name="email" 
+                        formControlName="email" 
+                        placement="bottom" 
+                        [ngbTooltip]="(infoForm.get('email')?.invalid&&infoForm.get('email')?.touched) ? 'Email es un campo requerido (aaa@bbb.ccc)': null"
                         [ngClass]="{'is-invalid': infoForm.get('email')?.invalid && (infoForm.get('email')?.dirty || infoForm.get('email')?.touched)}">
                       </div>
                       <div class="col-md-12">
                         <div class="text-right">
-                            <button type="button" class="btn btn-secondary btn-sm custom-btn" (click)="saveInfoShop()" [disabled]="saving">Guardar</button>
+                            <button type="button" class="btn btn-secondary btn-sm custom-btn" (click)="saveInfoShop()">Guardar</button>
                         </div>
                       </div>
-                      <span class="error">{{error}}</span>
                     </div>
                   </form>
             </div>

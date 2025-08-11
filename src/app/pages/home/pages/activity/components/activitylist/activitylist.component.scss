@@ -1,5 +1,29 @@
 .table{
     color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    tr{
+        th{
+            background: #1a1a1a;
+            border: 1px solid #444;
+            color: white
+        }
+        td{
+            background: #2c2c2c;
+            border: 1px solid #444;
+            padding-left: 5px;
+            padding-right: 5px;
+            color: white;
+        }
+        .th-main{
+            width: 70%;
+            vertical-align: middle;
+        }
+        .th-button{
+            width: 15%;
+            text-align: center;
+        }
+    }
 }
 
 .custom-btn{

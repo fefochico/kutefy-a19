@@ -1,0 +1,24 @@
+@if (componentToLoad) {
+  <ng-container #dynamicComponentContainer></ng-container>
+} @else if (bodyTemplate) {
+  <ng-container *ngTemplateOutlet="bodyTemplate"></ng-container>
+} @else {
+    <div class="modal-header">
+      <h4 class="modal-title">{{ title }}</h4>
+      @if(showCloseButtonInHeader){
+      <button type="button" class="btn-close" aria-label="Close" (click)="cancel()"></button>
+      }
+    </div>
+    <div class="modal-body">
+      @if (textContent) {
+        <p>{{ textContent }}</p>
+      }
+    </div>
+    @if ((actions.length > 0)) {
+    <div class="modal-footer">
+      @for(action of actions; track action.text){
+      <button type="button" class="btn btn-{{action.type}} btn-sm ok" (click)="action.fn()">{{ action.text }}</button>
+      }
+    </div>
+    }
+  }

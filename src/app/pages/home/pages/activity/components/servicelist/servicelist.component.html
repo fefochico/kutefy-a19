@@ -12,9 +12,10 @@
                 <thead>
                 <tr>
                     <th class="col th-main">Nombre</th>
-                    <th class="col th-info">Tiempo</th>
-                    <th class="col th-button"></th>
-                    <th class="col th-button"></th>
+                    <th class="col th-info">Duracion</th>
+                    <th class="col th-info">Precio</th>
+                    <th class="col th-button">Editar</th>
+                    <th class="col th-button">Borrar</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -23,6 +24,7 @@
                         <tr class="register">
                             <td class="th-main">{{service.name}}</td>
                             <td class="th-info">{{service.duration}}</td>
+                            <td class="th-info">{{service.price}}€</td>
                             <td class="th-button">
                                 <button type="button" class="btn btn-secondary btn-sm editButton" (click)="edit(activity, service)">
                                     <svg class="bi bi-pencil" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

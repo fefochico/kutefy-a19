@@ -46,7 +46,8 @@ export class InfoComponent implements OnInit {
         [Validators.required, Validators.minLength(9), Validators.pattern('^[0-9]*$')]
       ],
       phone2: [
-        ''
+        '',
+        [Validators.minLength(9), Validators.pattern('^[0-9]*$')]
       ],
       idcountry: [
         null,
@@ -69,6 +70,7 @@ export class InfoComponent implements OnInit {
   }
 
   public saveInfoShop(){
+    this.infoForm.markAllAsTouched();
     if(this.infoForm.valid){
       console.log('Formulario válido')
       console.log(this.infoForm.value);

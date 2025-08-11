@@ -1,0 +1,38 @@
+<form [formGroup]="activityForm" class="form">
+    <div class="modal-header">
+        <h4>Actividad</h4>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+            <div class="form-group">
+                <label for="name" class="col-form-label-sm">Nombre*:</label>
+                <input type="text" class="form-control form-control-sm" id="name" name="name" 
+                formControlName="name" 
+                placement="bottom" 
+                [ngbTooltip]="activityForm.get('name')?.invalid&&activityForm.get('name')?.touched ? 'Nombre es un campo obligatorio (min. 5 caracteres)' : null"
+                [ngClass]="{'is-invalid': activityForm.get('name')?.invalid && (activityForm.get('name')?.dirty || activityForm.get('name')?.touched)}">
+            </div>
+            </div>
+            <div class="col-md-12">
+            <div class="form-group">
+                <label for="description" class="col-form-label-sm">Descripción*:</label>
+                <textarea class="form-control form-control-sm" id="description" rows="3" name="description" 
+                formControlName="description" 
+                placement="bottom" 
+                [ngbTooltip]="activityForm.get('description')?.invalid&&activityForm.get('description')?.touched ? 'Descripción es un campo obligatorio (min. 10 caracteres)' : null"
+                [ngClass]="{'is-invalid': activityForm.get('description')?.invalid && (activityForm.get('description')?.dirty || activityForm.get('description')?.touched)}">
+                ></textarea>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-secondary btn-sm custom-btn" (click)="closeModal()">Cerrar</button>  
+        <button type="button" class="btn btn-secondary btn-sm custom-btn" (click)="save()">Guardar</button>
+    </div>
+</form>
+
+
+
+
