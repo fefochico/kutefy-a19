@@ -32,6 +32,7 @@ export class ServicelistComponent {
       description: 'Description 1',
       date: '2021-01-01',
       duration: '01:00:00',
+      idDuration: 2,
       price: 100.00,
       status: 'enabled'
     },
@@ -42,6 +43,7 @@ export class ServicelistComponent {
       description: 'Description 2',
       date: '2021-01-01',
       duration: '01:00:00',
+      idDuration: 1,
       price: 50.00,
       status: 'enabled'
     }
@@ -70,7 +72,7 @@ export class ServicelistComponent {
 
   public remove(data: any){
     const modalRef: NgbModalRef = this._ngbModalService.open(
-      ModalContainerComponent, {size: 'sm', backdrop: 'static', centered: true});
+      ModalContainerComponent, {size: 'md', backdrop: 'static', centered: true});
       if(modalRef.componentInstance){
         modalRef.componentInstance.title= 'Eliminar Servicio';
         modalRef.componentInstance.textContent= '¿Esta seguro que desea eliminar el servicio "' + data.name + '"?'

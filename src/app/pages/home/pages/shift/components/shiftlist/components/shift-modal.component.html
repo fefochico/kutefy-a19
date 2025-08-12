@@ -1,0 +1,78 @@
+<form [formGroup]="shiftForm" class="form">
+    <div class="modal-header">
+        <h4> {{shift?'Editar':'Crear'}} turno</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+            <div class="form-group">
+                <label for="name" class="col-form-label-sm">Nombre*:</label>
+                <input type="text" class="form-control form-control-sm" id="name" name="name" 
+                formControlName="name" 
+                placement="bottom" 
+                [ngbTooltip]="shiftForm.get('name')?.invalid&&shiftForm.get('name')?.touched ? 'Nombre es un campo obligatorio (min. 5 caracteres)' : null"
+                [ngClass]="{'is-invalid': shiftForm.get('name')?.invalid && (shiftForm.get('name')?.dirty || shiftForm.get('name')?.touched)}">
+            </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="startTime" class="col-form-label-sm">Hora de inicio*:</label>
+                    <select type="time" class="form-control form-control-sm" id="startTime" name="startTime" 
+                    formControlName="startTime" 
+                    placement="bottom" 
+                    [ngbTooltip]="(shiftForm.get('startTime')?.invalid&&shiftForm.get('startTime')?.touched) ? 'Hora de inicio es un campo requerido': null"
+                    [ngClass]="{'is-invalid': shiftForm.get('startTime')?.invalid && (shiftForm.get('startTime')?.dirty || shiftForm.get('startTime')?.touched)}"
+                    >
+                    <option value="">Seleccione una hora</option>
+                    @for(h of times; track h.id){     
+                        <option value="{{h.id}}">{{h.text}}</option>
+                    }
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="endTime" class="col-form-label-sm">Hora de fin*:</label>
+                    <select type="time" class="form-control form-control-sm" id="endTime" name="endTime" 
+                    formControlName="endTime" 
+                    placement="bottom" 
+                    [ngbTooltip]="(shiftForm.get('endTime')?.invalid&&shiftForm.get('endTime')?.touched) ? 'Hora de fin es un campo requerido': null"
+                    [ngClass]="{'is-invalid': shiftForm.get('endTime')?.invalid && (shiftForm.get('endTime')?.dirty || shiftForm.get('endTime')?.touched)}"
+                    >
+                    <option value="">Seleccione una hora</option>
+                    @for(h of times; track h.id){     
+                        <option value="{{h.id}}">{{h.text}}</option>
+                    }
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="days" class="col-form-label-sm">Días*:</label>
+                    <select multiple class="form-control form-control-sm" id="days" name="days" 
+                    formControlName="days" 
+                    placement="bottom" 
+                    [ngbTooltip]="(shiftForm.get('days')?.invalid&&shiftForm.get('days')?.touched) ? 'Días es un campo requerido': null"
+                    [ngClass]="{'is-invalid': shiftForm.get('days')?.invalid && (shiftForm.get('days')?.dirty || shiftForm.get('days')?.touched)}"
+                    >
+                    <option value="Lunes">Lunes</option>
+                    <option value="Martes">Martes</option>
+                    <option value="Miércoles">Miércoles</option>
+                    <option value="Jueves">Jueves</option>
+                    <option value="Viernes">Viernes</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-secondary btn-sm custom-btn" (click)="closeModal()">Cerrar</button>  
+        <button type="button" class="btn btn-secondary btn-sm custom-btn" (click)="save()">Guardar</button>
+    </div>
+</form>
+
+
+
+

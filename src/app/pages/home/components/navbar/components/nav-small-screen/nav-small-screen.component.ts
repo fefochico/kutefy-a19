@@ -1,4 +1,4 @@
-import { Component, EventEmitter, input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, input, InputSignal, InputSignalWithTransform, Output, signal, WritableSignal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -9,12 +9,12 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
   styleUrl: './nav-small-screen.component.scss'
 })
 export class NavSmallScreenComponent {
-  isNavbarCollapsed = input(true); 
-
+  @Output() collapseNavbar: EventEmitter<boolean> = new EventEmitter<boolean>();
   public logout(){
 
   }
 
-  closeCollapseNavbar(itemIndex: number | null) {
+  closeCollapseNavbar() {
+    this.collapseNavbar.emit(true);
   }
 }

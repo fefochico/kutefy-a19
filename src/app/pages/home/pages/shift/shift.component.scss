@@ -1,0 +1,25 @@
+
+
+.bg-dark-custom{
+    background: #282b34;
+    border-color: #383b43 !important;
+    color: white
+}
+
+.card{
+    margin-bottom: 25px;
+    .form-control{
+        background-color: #33363e;
+        color: white;
+        border-color: rgba(255,255,255,0.3) !important;
+        border-radius: 0;
+    }
+}
+
+.border-light{
+    border-color: rgba(255,255,255,0.3) !important;
+}
+
+.card-header{
+    border-bottom: 0px;
+}

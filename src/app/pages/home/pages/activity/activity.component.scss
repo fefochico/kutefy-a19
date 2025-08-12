@@ -25,3 +25,9 @@
 .card-header{
     border-bottom: 0px;
 }
+
+@media (max-width: 991px) {
+    .service-seccion{
+        margin-top: 50px;
+    }
+}

@@ -1,6 +1,8 @@
 <form [formGroup]="activityForm" class="form">
     <div class="modal-header">
-        <h4>Actividad</h4>
+        <h4> {{activity?'Editar':'Crear'}} actividad</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+
     </div>
     <div class="modal-body">
         <div class="row">

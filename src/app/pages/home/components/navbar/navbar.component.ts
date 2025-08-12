@@ -12,4 +12,8 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 export class NavbarComponent {
   isNavbarSmallCollapsed = true; 
 
+  closeSmallNavbar(isCollapsed: boolean) {
+    console.log('Navbar collapsed:', isCollapsed);
+    this.isNavbarSmallCollapsed = isCollapsed;
+  }
 }

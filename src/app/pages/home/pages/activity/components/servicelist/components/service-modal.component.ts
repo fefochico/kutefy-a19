@@ -17,7 +17,11 @@ export class ServiceModalComponent implements OnInit{
     @Input() activity: any;
     @Input() service: any;
     @Output() close= new EventEmitter<boolean>();
-    
+    duration: any[]=[
+        { id: 1, name: '30 minutos' },
+        { id: 2, name: '1 hora' },
+        { id: 3, name: '2 horas' }
+    ];
     public serviceForm!: FormGroup;
     private fb= inject(FormBuilder);
     
@@ -33,12 +37,12 @@ export class ServiceModalComponent implements OnInit{
             [Validators.required, Validators.minLength(10)]
         ],
         duration: [
-            this.service?.idDuration||null,
+            this.service?.idDuration || '',
             [Validators.required]
         ],
         price: [
-            this.service?.price||null,
-            [Validators.required]
+            this.service?.price || '',
+            [Validators.required, Validators.pattern(/^\d+(\.\d{1,2})?$/)]
         ]
         });
     }

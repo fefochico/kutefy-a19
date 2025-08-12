@@ -17,7 +17,7 @@
     @if ((actions.length > 0)) {
     <div class="modal-footer">
       @for(action of actions; track action.text){
-      <button type="button" class="btn btn-{{action.type}} btn-sm ok" (click)="action.fn()">{{ action.text }}</button>
+      <button type="button" class="btn btn-{{action.type}} custom-btn btn-sm ok" (click)="action.fn()">{{ action.text }}</button>
       }
     </div>
     }

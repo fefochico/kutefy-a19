@@ -19,6 +19,7 @@ export interface DynamicComponentData {
   selector: 'app-modal-continer',
   imports: [CommonModule],
   templateUrl: './modal-container.component.html',
+  styleUrls: ['./modal-container.component.scss'],
 })
 export class ModalContainerComponent implements OnInit, OnDestroy {
   //Atributos input
@@ -100,9 +101,22 @@ export class ModalContainerComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     if (this.dynamicComponentRef) { // Si existe un componente dinamico lo destruimos
       this.dynamicComponentRef.destroy();
+      this.dynamicComponentRef = null;
     }
+
+
     // Desuscribirse de todas las suscripciones de outputs
     this.outputSubscriptions.forEach(sub => sub.unsubscribe());
     this.outputSubscriptions = []; // Limpiar el array
+  
+    this.componentToLoad= null;
+    this.componentInputs = {};
+    this.componentOutputs = {}; 
+    this.bodyTemplate = null; // Limpiar el TemplateRef
+
+    if(this.dynamicComponentContainer) {
+      this.dynamicComponentContainer.clear(); // Limpiar el contenedor del componente dinámico
+    }
+    console.log('ModalContainerComponent destroyed');
   }
 }
